@@ -25,6 +25,18 @@ const HouseContextProvider = ({ children }) => {
 
     }, [])
 
+    useEffect(() => {
+        const allProperties = houses.map((house) => {
+            return house.type;
+        });
+        console.log(allProperties);
+
+        const uniqueProperties = ['Select  (any)', ...new Set(allProperties)];
+
+        setProperties(uniqueProperties);
+
+    }, [])
+
     return <HouseContext.Provider value={{
         country,
         setCountry,

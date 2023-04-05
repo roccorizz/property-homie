@@ -7,12 +7,12 @@ function Header() {
             <div className='container mx-auto flex justify-between items-center'>
                 {/*  logo  */}
                 <Link to='/'>
-                    <img src={logo} alt='' />
+                    <img className='w-16 h-14' src={logo} alt='' />
                 </Link>
                 {/* buttons */}
                 <div className='flex items-center gap-6'>
-                    <Link className='hover:text-violet-900' to=''>Log In</Link>
-                    <Link className='bg-violet-700 hover:bg-violet-800 text-white px-4 py-3 rounded-lg transition' to=''>Sign Up</Link>
+                    <Link className='hover:text-orange-900' to=''>Log In</Link>
+                    <Link className='bg-orange-700 hover:bg-orange-800 text-white px-4 py-3 rounded-lg transition' to=''>Sign Up</Link>
                 </div>
             </div>
         </header>

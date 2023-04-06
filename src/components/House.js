@@ -1,9 +1,11 @@
-import React from 'react'
+import React from 'react';
 
-function House() {
+const House = () => {
     return (
-        <div>House</div>
-    )
-}
+        <div>
+            house
+        </div>
+    );
+};
 
-export default House
+export default House;

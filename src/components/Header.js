@@ -3,12 +3,17 @@ import { Link } from 'react-router-dom'
 import logo from '../assets/img/logo.png'
 function Header() {
     return (
-        <header className='py-6 mb-12 border-b'>
+        <header className='py-3 mb-12 border-b'>
             <div className='container mx-auto flex justify-between items-center'>
                 {/*  logo  */}
-                <Link to='/'>
-                    <img className='w-16 h-14' src={logo} alt='' />
-                </Link>
+                <div>
+
+                    <Link className='flex flex-row items-center gap-x-2 ' to='/'>
+                        <img className='w-16 h-14' src={logo} alt='' />
+                        <h2 className='lg:text-2xl font-semibold text-xl '>Property Homie</h2>
+                    </Link>
+                </div>
+
                 {/* buttons */}
                 <div className='flex items-center gap-6'>
                     <Link className='hover:text-orange-900' to=''>Log In</Link>

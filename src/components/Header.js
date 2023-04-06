@@ -10,12 +10,12 @@ function Header() {
 
                     <Link className='flex flex-row items-center gap-x-2 ' to='/'>
                         <img className='w-16 h-14' src={logo} alt='' />
-                        <h2 className='lg:text-2xl font-semibold text-xl '>Property Homie</h2>
+                        <h2 className='lg:text-2xl font-semibold text-lg '>Property Homie</h2>
                     </Link>
                 </div>
 
                 {/* buttons */}
-                <div className='flex items-center gap-6'>
+                <div className='flex items-center gap-6 lg:text-lg text-md '>
                     <Link className='hover:text-orange-900' to=''>Log In</Link>
                     <Link className='bg-orange-700 hover:bg-orange-800 text-white px-4 py-3 rounded-lg transition' to=''>Sign Up</Link>
                 </div>

@@ -65,7 +65,7 @@ function Header() {
                             <div className='p-4'>
                                 <div style={{ float: 'right' }}>
                                     <button
-                                        className='block mt-4 text-center hover:text-orange-900'
+                                        className='block mt-2 text-center hover:text-orange-900'
                                         onClick={() => setIsSidebarOpen(false)}
                                     >
                                         <svg

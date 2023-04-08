@@ -8,15 +8,13 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
 import HouseContextProvider from './components/HouseContext';
 import { Auth0Provider } from '@auth0/auth0-react';
-const auth0Domain = process.env.REACT_APP_AUTH0_DOMAIN;
-const auth0ClientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
 const dotenv = require('dotenv');
 dotenv.config();
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Auth0Provider
-    domain={auth0Domain}
-    clientId={auth0ClientId}
+    domain={process.env.REACT_APP_AUTH0_DOMAIN}
+    clientId={process.env.REACT_APP_AUTH0_CLIENT_ID}
     authorizationParams={{
       redirect_uri: window.location.origin
     }}

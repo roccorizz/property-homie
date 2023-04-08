@@ -7,17 +7,27 @@ import reportWebVitals from './reportWebVitals';
 // import router
 import { BrowserRouter as Router } from 'react-router-dom';
 import HouseContextProvider from './components/HouseContext';
+import { Auth0Provider } from '@auth0/auth0-react';
+const auth0Domain = process.env.REACT_APP_AUTH0_DOMAIN;
+const auth0ClientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
-  <HouseContextProvider>
+  <Auth0Provider
+    domain={auth0Domain}
+    clientId={auth0ClientId}
+    authorizationParams={{
+      redirect_uri: window.location.origin
+    }}
+  >
 
-    <Router>
-      <React.StrictMode>
+    <HouseContextProvider>
+
+      <Router>
         <App />
-      </React.StrictMode>
-    </Router>
-  </HouseContextProvider>
+      </Router>
+    </HouseContextProvider>
+  </Auth0Provider>
 );
 
 // If you want to start measuring performance in your app, pass a function

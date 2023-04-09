@@ -21,7 +21,7 @@ const HouseContextProvider = ({ children }) => {
 
         const uniqueCountries = ['Location (any)', ...new Set(allCountries)];
 
-
+        setCountries(uniqueCountries);
 
     }, [])
 

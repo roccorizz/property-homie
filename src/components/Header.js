@@ -1,8 +1,7 @@
-import React, { useContext, useState } from 'react'
+import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
 import logo from '../assets/img/logo.png'
 import { useAuth0 } from "@auth0/auth0-react";
-// import AuthContext from '../Contexts/Authprovider/Authprovider'
 function Header() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false)
     const { isAuthenticated, loading, loginWithRedirect, logout } = useAuth0();

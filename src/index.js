@@ -10,12 +10,14 @@ import HouseContextProvider from './components/HouseContext';
 import { Auth0Provider } from '@auth0/auth0-react';
 const auth0Domain = process.env.REACT_APP_AUTH0_DOMAIN;
 const auth0ClientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
+const audience = process.env.REACT_APP_AUTH0_AUDIENCE
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Auth0Provider
     domain={auth0Domain}
     clientId={auth0ClientId}
-    redirect_uri={window.location.origin}
+    redirectUri={window.location.origin}
+    audience={audience}
   >
 
     <HouseContextProvider>

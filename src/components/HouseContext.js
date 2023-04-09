@@ -29,7 +29,7 @@ const HouseContextProvider = ({ children }) => {
         const allProperties = houses.map((house) => {
             return house.type;
         });
-        console.log(allProperties);
+
 
         const uniqueProperties = ['Select  (any)', ...new Set(allProperties)];
 

@@ -8,8 +8,10 @@ import reportWebVitals from './reportWebVitals';
 import { BrowserRouter as Router } from 'react-router-dom';
 import HouseContextProvider from './components/HouseContext';
 import { Auth0Provider } from '@auth0/auth0-react';
-const auth0Domain = process.env.REACT_APP_AUTH0_DOMAIN;
-const auth0ClientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
+import authConfig from './auth_config.json';
+
+const domain = authConfig.domain;
+const clientId = authConfig.clientId;
 const audience = [
   'https://propertyhomierocco-server.vercel.app/jwt',
   'https://propertyhomierocco-server.vercel.app/services',
@@ -23,8 +25,8 @@ const audience = [
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Auth0Provider
-    domain={auth0Domain}
-    clientId={auth0ClientId}
+    domain={domain}
+    clientId={clientId}
     redirectUri={window.location.origin}
     audience={audience}
   >

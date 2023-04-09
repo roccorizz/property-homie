@@ -10,7 +10,16 @@ import HouseContextProvider from './components/HouseContext';
 import { Auth0Provider } from '@auth0/auth0-react';
 const auth0Domain = process.env.REACT_APP_AUTH0_DOMAIN;
 const auth0ClientId = process.env.REACT_APP_AUTH0_CLIENT_ID;
-const audience = process.env.REACT_APP_AUTH0_AUDIENCE
+const audience = [
+  'https://propertyhomierocco-server.vercel.app/jwt',
+  'https://propertyhomierocco-server.vercel.app/services',
+  'https://propertyhomierocco-server.vercel.app/services/:id',
+  'https://propertyhomierocco-server.vercel.app/all-services',
+  'https://propertyhomierocco-server.vercel.app/featured-properties',
+  'https://propertyhomierocco-server.vercel.app/featured-properties/:id',
+  'https://propertyhomierocco-server.vercel.app/allproperties',
+  'https://propertyhomierocco-server.vercel.app/allproperties/:id'
+]
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Auth0Provider

@@ -2,11 +2,12 @@ import { createBrowserRouter } from 'react-router-dom'
 
 
 
-import AboutMe from '../../components/About/AboutMe';
+import AboutMe from '../../pages/About/AboutMe';
 import Home from '../../pages/Homepage/Home/Home';
 import PropertyDetails from '../../pages/PropertyDetails';
 import Main from '../../Layout/Main';
-import About from '../../components/About/About';
+import About from '../../pages/About/About';
+import Blog from '../../pages/Blog/Blog';
 
 
 const router = createBrowserRouter([
@@ -30,6 +31,10 @@ const router = createBrowserRouter([
                 path: '/property/:id',
                 element: <PropertyDetails />
                 // loader: ({ params }) => fetch(`https://propertyhomierocco-server.vercel.app/allproperties/${params.id}`)
+            },
+            {
+                path: '/blog',
+                element: <Blog />
             }
         ]
     },

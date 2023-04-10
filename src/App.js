@@ -1,4 +1,4 @@
-import { Route, RouterProvider, Routes } from 'react-router-dom';
+import { RouterProvider } from 'react-router-dom';
 import './App.css';
 
 import { Toaster } from 'react-hot-toast'
@@ -10,12 +10,14 @@ import PropertyDetails from './pages/PropertyDetails';
 function App() {
   return (
     <div className='max-w-[1440px] mx-auto bg-white'>
-      <Header />
+      <RouterProvider router={router}></RouterProvider>
+
+      {/* <Header />
       <Routes>
         <Route path='/' element={<Home />} />
         <Route path='/property/:id' element={<PropertyDetails />} />
       </Routes>
-      <Footer />
+      <Footer /> */}
       <Toaster />
     </div>
   );

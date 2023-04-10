@@ -5,7 +5,7 @@ import App from './App';
 import reportWebVitals from './reportWebVitals';
 
 // import router
-import { BrowserRouter as Router } from 'react-router-dom';
+
 import HouseContextProvider from './components/HouseContext';
 import { Auth0Provider } from '@auth0/auth0-react';
 import authConfig from './auth_config.json';
@@ -32,10 +32,7 @@ root.render(
   >
 
     <HouseContextProvider>
-
-      <Router>
-        <App />
-      </Router>
+      <App />
     </HouseContextProvider>
   </Auth0Provider>
 );

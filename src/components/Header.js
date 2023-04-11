@@ -5,13 +5,12 @@ import { useAuth0 } from "@auth0/auth0-react";
 function Header() {
     const [isSidebarOpen, setIsSidebarOpen] = useState(false)
     const { isAuthenticated, loading, loginWithRedirect, logout } = useAuth0();
-    // const { user, logOut } = useContext();
-    // const handleLogOut = () => {
-    //     logOut()
-    //         .then()
-    //         .catch();
+    const [activeLink, setActiveLink] = useState('');
 
-    // }
+    function handleClick(link) {
+        setActiveLink(link);
+        setIsSidebarOpen(false);
+    }
     const menuItems = <>
         <li className='font-semibold '><Link className='group text-orange-600 transition  duration-300' to='/'>Home <span className="block mt-2 max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-orange-900"></span></Link></li>
         <li className='font-semibold'><Link className='group text-orange-600 transition duration-300' to='/aboutme'>About Me <span className="block mt-2 max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-orange-900"></span></Link></li>
@@ -133,17 +132,36 @@ function Header() {
                                     </button>
                                 </div>
                                 <ul className='mt-12'>
-                                    <li className='font-semibold'><Link className='block  mb-4 text-center hover:bg-orange-700 hover:text-white py-3 rounded-lg transition' to='/'>Home</Link></li>
-                                    <li className='font-semibold'><Link className='block  mb-4 text-center hover:bg-orange-700 hover:text-white py-3 rounded-lg transition' to='/aboutme'>About Me</Link></li>
-                                    <li className='font-semibold'><Link className='block  mb-4 text-center hover:bg-orange-700 hover:text-white py-3 rounded-lg transition' to='/blog'>Blog</Link></li>
-                                    <li className='font-semibold'><Link className='block  mb-4 text-center hover:bg-orange-700 hover:text-white py-3 rounded-lg transition' to='/allservices'>All Services</Link></li>
-                                    <li className='font-semibold'><Link className='block  mb-4 text-center hover:bg-orange-700 hover:text-white py-3 rounded-lg transition' to='/contact'>Contact</Link></li>
+                                    <li className=''>
+                                        <Link
+                                            className={`block mb-4 text-center py-3 rounded-lg transition ${activeLink === 'home'
+                                                ? 'text-orange-700 font-bold'
+                                                : ''
+                                                }`}
+                                            onClick={() => handleClick('home')}
+                                            to='/'
+                                        >
+                                            Home
+                                        </Link>
+                                    </li>
+                                    <li className=''><Link className={`block mb-4 text-center py-3 rounded-lg transition ${activeLink === 'aboutme'
+                                        ? 'text-orange-700 font-bold'
+                                        : ''
+                                        }`}
+                                        onClick={() => handleClick('aboutme')} to='/aboutme'>About Me</Link></li>
+                                    <li className=''><Link className={`block mb-4 text-center py-3 rounded-lg transition ${activeLink === 'blog'
+                                        ? 'text-orange-700 font-bold'
+                                        : ''
+                                        }`}
+                                        onClick={() => handleClick('blog')} to='/blog'>Blog</Link></li>
+                                    <li className=''><Link className='block mb-4 text-center hover:bg-orange-700 hover:text-white py-3 rounded-lg transition focus:bg-orange-700 focus:text-white' onClick={() => setIsSidebarOpen(false)} to='/allservices'>All Services</Link></li>
+                                    <li className=''><Link className='block  mb-4 text-center hover:bg-orange-700 hover:text-white py-3 rounded-lg transition focus:bg-orange-700 focus:text-white' onClick={() => setIsSidebarOpen(false)} to='/contact'>Contact</Link></li>
                                     {
                                         isAuthenticated ?
                                             <>
-                                                <li className='font-semibold'><Link className='block  mb-4 text-center hover:bg-orange-700 hover:text-white py-3 rounded-lg transition' to='/addaservice'>Add a Service</Link></li>
-                                                <li className='font-semibold'><Link className='block  mb-4 text-center hover:bg-orange-700 hover:text-white py-3 rounded-lg transition' to='/myreviews'>My Review </Link></li>
-                                                <li className='font-semibold'><Link onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })} className='block border border-orange-700 mb-4 rounded-lg py-3 text-center hover:text-white hover:bg-orange-700' >Logout
+                                                <li className=''><Link className='block  mb-4 text-center hover:bg-orange-700 hover:text-white py-3 rounded-lg transition' to='/addaservice'>Add a Service</Link></li>
+                                                <li className=''><Link className='block  mb-4 text-center hover:bg-orange-700 hover:text-white py-3 rounded-lg transition' to='/myreviews'>My Review </Link></li>
+                                                <li className=''><Link onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })} className='block border border-orange-700 mb-4 rounded-lg py-3 text-center hover:text-white hover:bg-orange-700' >Logout
                                                 </Link>
                                                 </li>
                                             </>

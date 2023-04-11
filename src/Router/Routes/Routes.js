@@ -8,6 +8,7 @@ import PropertyDetails from '../../pages/PropertyDetails';
 import Main from '../../Layout/Main';
 import About from '../../pages/About/About';
 import Blog from '../../pages/Blog/Blog';
+import AllServices from '../../pages/Services/AllServices';
 
 
 const router = createBrowserRouter([
@@ -35,7 +36,12 @@ const router = createBrowserRouter([
             {
                 path: '/blog',
                 element: <Blog />
-            }
+            },
+            {
+                path: '/allservices',
+                element: <AllServices />,
+
+            },
         ]
     },
 ]);

@@ -9,6 +9,7 @@ import Main from '../../Layout/Main';
 import About from '../../pages/About/About';
 import Blog from '../../pages/Blog/Blog';
 import AllServices from '../../pages/Services/AllServices';
+import ContactForm from '../../pages/Contactme/Contactme';
 
 
 const router = createBrowserRouter([
@@ -42,6 +43,12 @@ const router = createBrowserRouter([
                 element: <AllServices />,
 
             },
+            {
+                path: '/contact',
+                element: <ContactForm />,
+
+            },
+
         ]
     },
 ]);

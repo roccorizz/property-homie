@@ -28,9 +28,7 @@ function Blog() {
 
     return (
         <div className="max-w-xl mx-10 md:mx-auto h-[230vh] md:h-[170vh] justify-center">
-            <h1 className="text-lg md:text-2xl lg:text-3xl text-center py-2 font-bold text-orange-600">
-                Blog
-            </h1>
+            <p className='text-4xl font-bold text-center lg:text-end  my-5 text-orange-600'>Blogs</p><hr className=' border-t-2 border-orange-700 my-5' />
             {items.map((item) => (
                 <Disclosure key={item.id} >
                     {({ open }) => (

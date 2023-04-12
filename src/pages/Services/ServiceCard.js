@@ -4,7 +4,7 @@ import { Link } from 'react-router-dom';
 const ServiceCard = ({ service }) => {
     const { _id, picture, balance, name, about } = service;
     return (
-        <div className="bg-base-100 shadow-xl w-96 transform transition duration-300 ease-in-out hover:scale-105 border rounded-xl mb-3">
+        <div className="bg-[whitesmoke] shadow-lg transform transition duration-300 ease-in-out hover:scale-105 border rounded-xl mb-3">
             <div className="aspect-w-16 aspect-h-9 ">
                 <img src={picture} alt="" className="object-cover h-52 w-full" />
             </div>

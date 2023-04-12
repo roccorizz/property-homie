@@ -10,6 +10,8 @@ import About from '../../pages/About/About';
 import Blog from '../../pages/Blog/Blog';
 import AllServices from '../../pages/Services/AllServices';
 import ContactForm from '../../pages/Contactme/Contactme';
+import SingleService from '../../pages/Services/SingleService';
+import AddReview from '../../pages/Review/AddReview';
 
 
 const router = createBrowserRouter([
@@ -48,6 +50,15 @@ const router = createBrowserRouter([
                 element: <ContactForm />,
 
             },
+            {
+                path: '/singleservice/:id',
+                element: <SingleService />,
+                loader: ({ params }) => fetch(`https://propertyhomierocco-server.vercel.app/services/${params.id}`)
+            },
+            {
+                path: '/service-addreview/:id',
+                element: <AddReview />
+            }
 
         ]
     },

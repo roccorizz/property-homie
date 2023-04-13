@@ -33,7 +33,7 @@ function Header() {
 
                     <li>
 
-                        <button onClick={() => loginWithRedirect()}><Link className='hover:text-orange-900 border border-orange-600 px-4 py-2' >Log In
+                        <button onClick={() => loginWithRedirect()}><Link className='block bg-orange-700 hover:bg-white hover:text-orange-700 text-white px-4 py-3 rounded-lg transition text-center' >Login/Sign Up
                         </Link></button>
                     </li>
                 </>
@@ -63,27 +63,7 @@ function Header() {
                         {menuItems}
                     </ul>
                 </div>
-                {/* buttons */}
-                <div className='hidden lg:flex items-center gap-6 lg:text-[13px] xl:text-[15px] text-[10px]'>
 
-                    {
-                        !isAuthenticated ?
-                            <>
-                                <Link
-                                    className='bg-orange-700 hover:bg-orange-800 text-white px-4 py-3 rounded-lg transition'
-                                    to=''
-                                >
-                                    Sign Up
-                                </Link>
-                            </>
-                            :
-                            <>
-                            </>
-
-                    }
-
-
-                </div>
 
                 {/* mobile sidebar */}
                 <div className='lg:hidden'>
@@ -171,17 +151,10 @@ function Header() {
 
                                                 <li>
 
-                                                    <Link onClick={() => loginWithRedirect()} className='block border border-orange-700 mb-4 rounded-lg py-3 text-center hover:text-white hover:bg-orange-700' >Log In
+                                                    <Link onClick={() => loginWithRedirect()} className='block bg-orange-700 hover:bg-white hover:text-orange-700 text-white px-4 py-3 rounded-lg transition text-center' >Login/Sign Up
                                                     </Link>
                                                 </li>
-                                                <li>
-                                                    <Link
-                                                        className='block bg-orange-700 hover:bg-white hover:text-orange-700 text-white px-4 py-3 rounded-lg transition text-center'
-                                                        to=''
-                                                    >
-                                                        Sign Up
-                                                    </Link>
-                                                </li>
+
                                             </>
 
 

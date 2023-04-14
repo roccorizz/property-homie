@@ -15,7 +15,7 @@ const AllServices = () => {
             })
     }, [])
     return (
-        <div className='container mx-auto '>
+        <div className='container mx-auto h-full pb-20'>
 
 
             <div className='w-full h-full'>
@@ -24,7 +24,7 @@ const AllServices = () => {
             </div>
 
             {isLoading ?
-                <ImSpinner2 className='mx-auto animate-spin text-orange-700 text-4xl my-52' />
+                <ImSpinner2 className='mx-auto animate-spin text-orange-700 text-4xl h-screen ' />
                 :
                 <div className='grid gap-0 md:gap-4 grid-cols-1  md:grid-cols-2 lg:grid-cols-3 mb-10 mx-auto  text-center '>
                     {

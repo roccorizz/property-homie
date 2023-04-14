@@ -21,8 +21,11 @@ function Header() {
         {
             isAuthenticated ?
                 <>
-                    <li className='font-semibold'><Link className='group text-orange-600 transition duration-300' to='/addaservice'>Add a Service <span className="block mt-2 max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-orange-900"></span></Link></li>
-                    <li className='font-semibold'><Link className='group text-orange-600 transition duration-300' to='/myreviews'>My Review <span className="block mt-2 max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-orange-900"></span></Link></li>
+                    {/* <li className='font-semibold'>
+                        <Link className='group text-orange-600 transition duration-300' to='/reviews'>
+                            My Reviews <span className="block mt-2 max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-orange-900"></span>
+                        </Link>
+                    </li> */}
                     <li className='font-semibold'><Link onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })} className='group text-black transition duration-300' >Logout <span className="block mt-2 max-w-0 group-hover:max-w-full transition-all duration-500 h-0.5 bg-orange-900"></span>
                     </Link>
                     </li>
@@ -139,8 +142,8 @@ function Header() {
                                     {
                                         isAuthenticated ?
                                             <>
-                                                <li className=''><Link className='block  mb-4 text-center hover:bg-orange-700 hover:text-white py-3 rounded-lg transition' to='/addaservice'>Add a Service</Link></li>
-                                                <li className=''><Link className='block  mb-4 text-center hover:bg-orange-700 hover:text-white py-3 rounded-lg transition' to='/myreviews'>My Review </Link></li>
+
+                                                <li className=''><Link className='block  mb-4 text-center hover:bg-orange-700 hover:text-white py-3 rounded-lg transition' to='/myreviews'>My Reviews </Link></li>
                                                 <li className=''><Link onClick={() => logout({ logoutParams: { returnTo: window.location.origin } })} className='block border border-orange-700 mb-4 rounded-lg py-3 text-center hover:text-white hover:bg-orange-700' >Logout
                                                 </Link>
                                                 </li>

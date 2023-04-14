@@ -4,35 +4,30 @@ import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
 
+
+
 // import router
 
 import HouseContextProvider from './components/HouseContext';
 import { Auth0Provider } from '@auth0/auth0-react';
 import authConfig from './auth_config.json';
 
+
 const domain = authConfig.domain;
 const clientId = authConfig.clientId;
-const audience = [
-  'https://propertyhomierocco-server.vercel.app/jwt',
-  'https://propertyhomierocco-server.vercel.app/services',
-  'https://propertyhomierocco-server.vercel.app/services/:id',
-  'https://propertyhomierocco-server.vercel.app/all-services',
-  'https://propertyhomierocco-server.vercel.app/featured-properties',
-  'https://propertyhomierocco-server.vercel.app/featured-properties/:id',
-  'https://propertyhomierocco-server.vercel.app/allproperties',
-  'https://propertyhomierocco-server.vercel.app/allproperties/:id'
-]
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <Auth0Provider
     domain={domain}
     clientId={clientId}
     redirectUri={window.location.origin}
-    audience={audience}
+    audience={[]}
   >
 
     <HouseContextProvider>
+
       <App />
+
     </HouseContextProvider>
   </Auth0Provider>
 );

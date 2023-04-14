@@ -23,10 +23,10 @@ function Contactme() {
     }
 
     return (
-        <div className='container mx-auto lg:h-screen h-[75vh] md:h-[82vh]  px-10 md:px-32 lg:px-42 '>
+        <div className='container mx-auto h-screen px-10 md:px-32 lg:px-48 py-5 md:py-10'>
             <form onSubmit={sendEmail}>
-                <h1 className="text-center text-5xl font-bold  my-5 text-orange-700">Contact Me</h1>
-                <h1 className="text-center text-xl my-5 text-slate-700">Please fill up the boxes and send me if you have any query</h1>
+                <h1 className="text-center text-2xl md:text-4xl lg:text-5xl  font-bold  my-5 text-orange-700">Contact Me</h1>
+                <h1 className="text-center text-md md:text-xl my-5 text-slate-700">Please fill up the boxes and send me if you have any query</h1>
                 <div className="mb-5 pt-0 ">
                     <input
                         type="text"

@@ -14,6 +14,7 @@ import SingleService from '../../pages/Services/SingleService';
 import AddReview from '../../pages/Review/AddReview';
 
 
+
 const router = createBrowserRouter([
     {
         path: '/',
@@ -56,7 +57,7 @@ const router = createBrowserRouter([
                 loader: ({ params }) => fetch(`https://propertyhomierocco-server.vercel.app/services/${params.id}`)
             },
             {
-                path: '/service-addreview/:id',
+                path: '/reviews',
                 element: <AddReview />
             }
 
